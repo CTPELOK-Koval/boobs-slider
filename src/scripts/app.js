@@ -12,7 +12,8 @@ $(document).ready(function() {
 function sliderJS (obj, sl) {
   var ul = $(sl).find(".slider__ul");
   var bl = $(sl).find("li.slider"+obj);
-  $(".slider__ul").animate({marginLeft: "-"+$(bl).width()*obj}, 500);
+  var step = $(bl).width();
+  $(".slider__ul").animate({marginLeft: "-"+step*obj}, 500);
 
 }
 
