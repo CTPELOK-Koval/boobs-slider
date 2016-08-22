@@ -12,8 +12,7 @@ $(document).ready(function() {
 function sliderJS (obj, sl) {
   var ul = $(sl).find(".slider__ul");
   var bl = $(sl).find("li.slider"+obj);
-  var step = $(bl).width();
-  $(".slider__ul").animate({marginLeft: "-"+step*obj}, 500);
+  $(".slider__ul").animate({marginLeft: "-"+$(bl).width()*obj}, 500);
 
 }
 
@@ -23,6 +22,8 @@ $(document).on("click", ".slider .nav span", function() {
   $(sl).find("span").removeClass("active");
   $(this).addClass("active");
   var obj = $(this).attr("rel");
+  console.log(obj);
+  console.log(typeof(obj));
   sliderJS(obj, sl);
   return false;
 });
