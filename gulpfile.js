@@ -29,9 +29,9 @@ gulp.task('jquery', function buildHTML() {
       .pipe(gulp.dest('./public'));
 });
 
-gulp.task('handle', function buildHTML() {
-  return gulp.src('./src/scripts/handlebars.js')
-      .pipe(gulp.dest('./public'));
+gulp.task('images', function buildHTML() {
+  return gulp.src('./src/images/*.jpg')
+      .pipe(gulp.dest('./public/images'));
 });
 
 gulp.task('styles', function () {
@@ -92,7 +92,7 @@ gulp.task('build', gulp.series(
     gulp.parallel(
         'views',
         'jquery',
-        'handle',
+        'images',
         'styles',
         'scripts'
     )));
